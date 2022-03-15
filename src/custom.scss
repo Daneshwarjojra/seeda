@@ -1,0 +1,151 @@
+$theme-colors: (
+  "outline-primary": #96dce3,
+  "primary": #96dce3,
+  "outline-secondary": gray
+);
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@mixin horizontal-list {
+  @include reset-list;
+
+  li {
+    display: block;
+  }
+}
+$w100: 100%;
+$brandColor: #96dce3;
+.btn-outline-primary {background: transparent !important; color: $brandColor !important;}
+.btn-outline-secondary{background-color: transparent !important; color: gray !important;}
+.border-b1 {border-bottom: 1px solid #f4f4f4;}
+.mt-10 {margin-top: 10rem !important;}
+.mb-10 {margin-bottom: 10rem !important;}
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+p {
+  font-size: 16px;
+  color: #a9a9a9;
+}
+.iconBox {
+  background-color: white;
+}
+.trackbar {
+  width: $w100;
+  height: 10px;
+  margin: 40px 0 60px;
+  background-color: #f4f4f4;
+  position: relative;
+  .whichStep {
+    background-color: #e0e0e0;
+    width: 40px;
+    display: inline-block;
+    height: 40px;
+    border-radius: $w100;
+    text-align: center;
+    vertical-align: middle;
+    padding: 7px;
+    margin-top: -16px;
+    position: absolute;
+    &.step2 {left: 30%;}
+    &.step3 {right: 35%;}
+    &.step4 {right: 0;}
+    &.active {
+      background-color: $brandColor;
+      color: white;
+    }
+  }
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 6px; 
+  background: $brandColor;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 50px;
+  height: 25px;
+  border-radius: 6px;
+  background: $brandColor;
+  cursor: pointer;
+}
+.rangeBar {
+  display: inline-block;
+  width: 35px;
+  padding: 5px 0;
+  text-align: center;
+  position: relative;
+}
+.userAvatar {
+  display: flex;
+  color: #656565;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  background-color: #ebebeb;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.controlBtn {
+  display: flex;
+  color: #656565;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 16px;
+  background-color: #ebebeb;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  margin: 10px 0;
+}
+footer {
+  background-color: #23394e;
+  padding: 40px 0;
+  h2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+  }
+  p, h4 {
+    color: white;
+  }
+  ul {
+    @include horizontal-list;
+    color: white;
+  }
+}
+.dateSelectorWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  .react-datepicker-wrapper {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+@import "~bootstrap/scss/bootstrap";
