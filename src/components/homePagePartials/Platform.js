@@ -11,17 +11,17 @@ function Platform({handleHomeView}) {
     <section className="platform-section pt-80 pb-5 mb-5">
       <Container fluid>
         <Row className="align-items-center">
-          <Col md="6" className="text-sm-center">
+          <Col md="6" className="sm-text-center">
             <img src={desktop} className="w-100" style={{maxWidth: '692px'}} />
           </Col>
-          <Col md="6" className="pr-(13%) text-sm-center">
+          <Col md="6" className="pr-(13%) sm-text-center">
             <h1 className="text-capitalize fw-B mt-2 mb-3">seeda crawler</h1>
             <p className="fw-4">{ProductData.text}</p>
             <Button variant="primary" className="text-white text-capitalize" onClick={handleHomeView}>get started today<img src={right} /></Button>
           </Col>
         </Row>
         <Row className="mt-80 align-items-center">
-          <Col md="6" className="order-2 order-md-1 pl-(13%) mt-5 text-sm-center">
+          <Col md="6" className="order-2 order-md-1 pl-(13%) mt-5 sm-text-center">
             <h1 className="text-capitalize fw-B mt-2 mb-3">seeda crawler</h1>
             <p className="fw-4">{ProductData.text}</p>
             <Button variant="primary" className="text-white text-capitalize" onClick={handleHomeView}>get started today<img src={right} /></Button>
@@ -31,7 +31,7 @@ function Platform({handleHomeView}) {
           </Col>
         </Row>
         <Row className="mt-80 align-items-center">
-          <Col md="6" className="pl-(13%) text-sm-center mb-5">
+          <Col md="6" className="pl-(13%) sm-text-center mb-5">
             <h1 className="text-capitalize fw-B mt-2 mb-3">seeda crawler</h1>
             <p>{ProductData.homepageSolutionText}<br/>{ProductData.text}{ProductData.homepageSolutionText}<br/>{ProductData.text}</p>
           </Col>
@@ -40,7 +40,7 @@ function Platform({handleHomeView}) {
           </Col>
         </Row>
         <Row className="mt-80 align-items-center">
-          <Col md="6" className="order-1 order-md-2 pr-(13%) text-sm-center">
+          <Col md="6" className="order-1 order-md-2 pr-(13%) sm-text-center">
             <h1 className="text-capitalize fw-B mt-2 mb-3">seeda crawler</h1>
             <p className="fw-4">{ProductData.text}</p>
             <Button variant="primary" className="text-white text-capitalize" onClick={handleHomeView}>get started today<img src={right} /></Button>

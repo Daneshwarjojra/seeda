@@ -16,34 +16,34 @@ function Solutions() {
           </Col>
         </Row>
         <Row className="mt-5">
-          <Col md="4" className="py-5 text-sm-center">
+          <Col md="4" className="py-5 sm-text-center">
             <img src={solutionIcon} />
             <h3 className="text-capitalize fw-6 mt-2 mb-3">seeda crawler</h3>
             <p className="text-white">{ProductData.homepageSolutionText}</p>
           </Col>
-          <Col md="4" className="py-5 border-start border-end border-white text-sm-center">
+          <Col md="4" className="py-5 border-start border-end border-white sm-text-center">
             <img src={solutionIcon} />
             <h3 className="text-capitalize fw-6 mt-2 mb-3">seeda crawler</h3>
             <p className="text-white">{ProductData.homepageSolutionText}</p>
           </Col>
-          <Col md="4" className="py-5 text-sm-center">
+          <Col md="4" className="py-5 sm-text-center">
             <img src={solutionIcon} />
             <h3 className="text-capitalize fw-6 mt-2 mb-3">seeda crawler</h3>
             <p className="text-white">{ProductData.homepageSolutionText}</p>
           </Col>
         </Row>
         <Row className="pb-5 border-top border-white">
-          <Col md="4" className="py-5 text-sm-center">
+          <Col md="4" className="py-5 sm-text-center">
             <img src={solutionIcon} />
             <h3 className="text-capitalize fw-6 mt-2 mb-3">seeda crawler</h3>
             <p className="text-white">{ProductData.homepageSolutionText}</p>
           </Col>
-          <Col md="4" className="py-5 border-start border-end border-white text-sm-center">
+          <Col md="4" className="py-5 border-start border-end border-white sm-text-center">
             <img src={solutionIcon} />
             <h3 className="text-capitalize fw-6 mt-2 mb-3">seeda crawler</h3>
             <p className="text-white">{ProductData.homepageSolutionText}</p>
           </Col>
-          <Col md="4" className="py-5 text-sm-center">
+          <Col md="4" className="py-5 sm-text-center">
             <img src={solutionIcon} />
             <h3 className="text-capitalize fw-6 mt-2 mb-3">seeda crawler</h3>
             <p className="text-white">{ProductData.homepageSolutionText}</p>
