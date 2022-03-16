@@ -3,20 +3,10 @@ $theme-colors: (
   "primary": #96dce3,
   "outline-secondary": gray
 );
-@mixin reset-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-@mixin horizontal-list {
-  @include reset-list;
 
-  li {
-    display: block;
-  }
-}
 $w100: 100%;
 $brandColor: #96dce3;
+.btn {padding: 0.775rem 0.75rem !important;}
 .btn-outline-primary {background: transparent !important; color: $brandColor !important;}
 .btn-outline-secondary{background-color: transparent !important; color: gray !important;}
 .border-b1 {border-bottom: 1px solid #f4f4f4;}
@@ -29,9 +19,6 @@ h1 {
 p {
   font-size: 16px;
   color: #a9a9a9;
-}
-.iconBox {
-  background-color: white;
 }
 .trackbar {
   width: $w100;
@@ -122,22 +109,6 @@ p {
   float: right;
   margin: 10px 0;
 }
-footer {
-  background-color: #23394e;
-  padding: 40px 0;
-  h2 {
-    font-weight: bold;
-    font-size: 24px;
-    color: white;
-  }
-  p, h4 {
-    color: white;
-  }
-  ul {
-    @include horizontal-list;
-    color: white;
-  }
-}
 .dateSelectorWrapper {
   display: flex;
   align-items: center;
@@ -148,4 +119,11 @@ footer {
     }
   }
 }
+.lead-submit-btn {
+  position: absolute;
+  right: 0;
+  bottom: -6rem;
+  z-index: 1;
+}
+
 @import "~bootstrap/scss/bootstrap";

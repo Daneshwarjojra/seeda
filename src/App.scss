@@ -1,3 +1,28 @@
 @import "./custom.scss";
 @import "react-datepicker/dist/react-datepicker.css";
 
+@font-face {
+    font-family: "SF-Compact-Rounded-Regular";
+    src: local("SF-Compact-Rounded-Regular"), url('./fonts/SF-Compact-Rounded-Regular.woff') format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "SF-Compact-Rounded-Medium";
+    src: local("SF-Compact-Rounded-Medium"), url('./fonts/SF-Compact-Rounded-Medium.woff') format("woff");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "SF-Compact-Rounded-Bold";
+    src: local("SF-Compact-Rounded-Bold"), url('./fonts/SF-Compact-Rounded-Bold.woff') format("woff");
+    font-weight: bold;
+}
+
+.fw-B {
+    font-family: "SF-Compact-Rounded-Bold";
+}
+.fw-6{
+    font-family: "SF-Compact-Rounded-Medium";
+}
+.fw-4{
+    font-family: "SF-Compact-Rounded-Regular";
+}

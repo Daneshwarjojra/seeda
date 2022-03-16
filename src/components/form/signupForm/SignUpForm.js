@@ -4,7 +4,7 @@ import right from "../../../images/right.svg";
 import { ProductData } from "../../../utils";
 import MultiStepForm from "../multiStepForm";
 import { MultiStepFormProvider } from "../multiStepFormReducer";
-import Bitmap from "../../../images/Bitmap.png";
+import banner from "../../../images/banner.svg";
 
 function SignUpForm({handleNavigate, navigate}) {
   const [validated, setValidated] = useState(false);
@@ -50,7 +50,7 @@ function SignUpForm({handleNavigate, navigate}) {
                 </Form.Group>
                 <Form.Group as={Col} md="12" className="mb-3" controlId="validationCustom02">
                   <Form.Control
-                    require
+                    required
                     type="text"
                     className="text-uppercase"
                     placeholder="Last name"
@@ -76,7 +76,7 @@ function SignUpForm({handleNavigate, navigate}) {
               <p>{ProductData.text}</p>
             </Col>
             <Col key="signUpCol2" md="7" sm="6" style={{display:"flex", alignItems: "center", justifyContent: "flex-end"}} className="mt-5">
-              <img src={Bitmap} style={{width: "90%"}}/>
+              <img src={banner} style={{width: "90%"}}/>
             </Col>
           </>
         ) : (

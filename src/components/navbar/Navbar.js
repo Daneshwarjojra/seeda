@@ -5,7 +5,7 @@ import logo from "../../images/logo.png";
 
 function ProductNavbar({navigate, setToDefaultNavigateSate}) {
   return (
-    <Navbar bg="light" expand="lg" className="pt-3 pb-3 border-b1 sticky-top bg-white">
+    <Navbar bg="light" expand="lg" className="fw-4 pt-3 pb-3 border-b1 sticky-top bg-white">
       <Container>
         <Navbar.Brand href="/"><img className="d-inline-block" src={logo} width="150" height="40" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -13,18 +13,20 @@ function ProductNavbar({navigate, setToDefaultNavigateSate}) {
           <Nav className="justify-content-end ms-auto" activeKey="/">
           {!navigate ?
             <>
-            <Nav.Link className="text-capitalize">features</Nav.Link>
-            <Nav.Link className="text-capitalize">about</Nav.Link>
-            <Nav.Link className="text-capitalize">roadmap</Nav.Link>
-            <Nav.Link className="text-capitalize">pricing</Nav.Link>
+            <Nav.Link className="text-capitalize me-2">features</Nav.Link>
+            <Nav.Link className="text-capitalize me-2">about</Nav.Link>
+            <Nav.Link className="text-capitalize me-2">roadmap</Nav.Link>
+            <Nav.Link className="text-capitalize me-2">pricing</Nav.Link>
             </>
             :
+            <>
             <div className="userAvatar">MK</div>
+            <Button href="/" variant="outline-primary" className="text-capitalize">
+              dashboard
+            </Button>
+            </>
           }
-            <Button href="/" onClick={setToDefaultNavigateSate}
-              variant={!navigate ? "primary":"outline-primary"}
-              className={!navigate ? "text-capitalize text-white":"text-capitalize"}>
-                {!navigate ? 'sign up':'dashboard'}
+            <Button href="/" onClick={setToDefaultNavigateSate} variant="outline-primary" className="text-capitalize">sign up
             </Button>
           </Nav>
         </Navbar.Collapse>

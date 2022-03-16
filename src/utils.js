@@ -7,7 +7,9 @@ export const ProductData = {
   'deliverTitle' : 'Just a few more details, before',
   'fillForm' : 'Fill-in the form below',
   'creditText' : 'Fill-in the form the below. You will be charged at the end of the day.',
-  'receiveText' : 'How would you like to recieved the leads?'
+  'receiveText' : 'How would you like to recieved the leads?',
+  'homePageText' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dapibus est ac nunc gravida dapibus. Ut tempus neque vitae volutpat faucibus. Quisque euismod purus non eros molestie.',
+  'homepageSolutionText' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dapibus est ac nunc gravida dapibus.'
 };
 
 export const lineChartData = {

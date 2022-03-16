@@ -4,7 +4,7 @@ import { ProductData } from "../../../utils";
 import CreditCard from "../creditCardForm";
 import LeadForm from "../leadForm";
 
-function TargetForm({status, handleChange, handleDateRange}) {
+function TargetForm({status, handleChange, handleDateRange, validated, handleSubmit}) {
   const [range, setRange] = useState(0);
 
   const handleRange = (e) => {
@@ -30,7 +30,7 @@ function TargetForm({status, handleChange, handleDateRange}) {
       }
       
       <Col md="6" className="mt-5">
-        <LeadForm range={range} handleChange={handleChange} handleRange={handleRange} handleDateRange={handleDateRange} status={status} />
+        <LeadForm range={range} handleChange={handleChange} handleRange={handleRange} handleDateRange={handleDateRange} status={status} validated={validated} handleSubmit={handleSubmit} />
       </Col>
     </Row>
   )

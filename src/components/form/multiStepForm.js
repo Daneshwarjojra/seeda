@@ -30,7 +30,7 @@ function useFormProgress() {
 
 
 function MultiStepForm({handleNavigate,navigate}) {
-  // const [navigate, setNavigate] = useState(false);
+  const [validated, setValidated] = useState(false);
   const [formVal, setFormVal] = useState({
     myRange: "",
     dailyBudget: "",
@@ -49,7 +49,22 @@ function MultiStepForm({handleNavigate,navigate}) {
   }
   const { dispatch, state } = useMultiStepFormState();
   
-  const steps = [<BusinessForm key="business"/>, <CampaignForm key="campaign"/>, <TargetForm handleChange={handleChange} handleDateRange={handleDateRange} status={false}/>, <TargetForm handleChange={handleChange} handleDateRange={handleDateRange} status={true}/>];
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      dispatch({ type: "SUBMIT" });
+
+      // Simulated network request :)
+      setTimeout(() => {
+        dispatch({ type: "SUBMISSION_RECEIVED" });
+      }, 1500);
+    }
+    setValidated(true);
+  };
+  const steps = [<BusinessForm key="business"/>, <CampaignForm key="campaign"/>, <TargetForm handleChange={handleChange} handleDateRange={handleDateRange} status={false}/>, <TargetForm handleChange={handleChange} handleDateRange={handleDateRange} status={true} handleSubmit={handleSubmit} validated={validated} />];
   const [currentStep, goForward, goBack, active, handleActiveTrackBarIcon] = useFormProgress();
   const isFirst = currentStep === 0;
   const isLast = currentStep === steps.length - 1;
@@ -63,14 +78,6 @@ function MultiStepForm({handleNavigate,navigate}) {
     justifyContent: 'space-between'
   }
 
-  function handleSubmit() {
-    dispatch({ type: "SUBMIT" });
-
-    // Simulated network request :)
-    setTimeout(() => {
-      dispatch({ type: "SUBMISSION_RECEIVED" });
-    }, 1500);
-  }
   useEffect(() => {
     handleActiveTrackBarIcon();
   },[active])
@@ -103,15 +110,15 @@ function MultiStepForm({handleNavigate,navigate}) {
             </Col>
             <Col md="6">
               <div className="resultWrapper">
-                <p>Leads: {parsed_obj.myRange}</p>
+                <p><span></span>Leads: <span>{parsed_obj.myRange}</span></p>
                 <hr/>
-                <p>Daily Budget: {parsed_obj.dailyBudget}</p>
+                <p><span>Daily Budget:</span> <span>{parsed_obj.dailyBudget}</span></p>
                 <hr/>
-                <p>Cost PerLead: {parsed_obj.costPerLead}</p>
+                <p><span>Cost PerLead:</span> <span>{parsed_obj.costPerLead}</span></p>
                 <hr/>
-                <p>Start Date: {parsed_obj.startDate}</p>
+                <p><span>Start Date:</span>  <span>{parsed_obj.startDate}</span></p>
                 <hr/>
-                <p>End Date: {parsed_obj.endDate}</p>
+                <p><span>End Date:</span> <span>{parsed_obj.endDate}</span></p>
               </div>
             </Col>
           </Row>
@@ -131,23 +138,18 @@ function MultiStepForm({handleNavigate,navigate}) {
         {steps[currentStep]}
         <div key="multiStepActionWrapper" className="d-flex mt-3" style={isFirst ? flexEnd : spaceBetween }>
           {!isFirst && <Button variant="primary" className="text-white text-capitalize" onClick={() => goBack()}><img src={back} />Go Back</Button>}
-
-          <Button variant="primary"
+          {isLast ? '' : <Button variant="primary"
             className="text-white text-capitalize"
             type="submit"
             onClick={e => {
               e.preventDefault();
-
-              if (isLast) {
-                handleSubmit();
-              } else {
+              if (!isLast) {
                 goForward();
               }
             }}
           >
-            {isLast ? "Submit" : 'Next' }
-            {isLast ? '' : <img src={right} /> }
-          </Button>
+            Next <img src={right} />
+          </Button>}
         </div>
       </Col>
     </div>
