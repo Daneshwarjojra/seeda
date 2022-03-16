@@ -8,7 +8,8 @@ import banner from "../../../images/banner.svg";
 
 function SignUpForm({handleNavigate, navigate}) {
   const [validated, setValidated] = useState(false);
-  const [value, setValue] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [number, setNumber] = useState('');
   const [submit, setSubmit] = useState(false);
   const handleSubmit = (event) => {
@@ -21,9 +22,14 @@ function SignUpForm({handleNavigate, navigate}) {
     }
     setValidated(true);
   };
-  const handleValue = (event) => {
-    setValue(event.target.value);
+  const handleFirstName = (event) => {
+    setFirstName(event.target.value);
   }
+
+  const handleLastName = (event) => {
+    setLastName(event.target.value);
+  }
+
   const handleNumber = (evt) => {
     let number = evt.target.value.replace(/[^0-9.]/g,'');
     setNumber(number);
@@ -41,10 +47,9 @@ function SignUpForm({handleNavigate, navigate}) {
                   <Form.Control
                     required
                     type="text"
-                    className="text-uppercase"
-                    placeholder="First name"
-                    value={value}
-                    onChange={handleValue}
+                    placeholder="FIRST NAME"
+                    value={firstName}
+                    onChange={handleFirstName}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
@@ -52,10 +57,9 @@ function SignUpForm({handleNavigate, navigate}) {
                   <Form.Control
                     required
                     type="text"
-                    className="text-uppercase"
-                    placeholder="Last name"
-                    value={value}
-                    onChange={handleValue}
+                    placeholder="LAST NAME"
+                    value={lastName}
+                    onChange={handleLastName}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
